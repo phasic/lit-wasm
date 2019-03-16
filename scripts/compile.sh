@@ -11,5 +11,5 @@ compile() {
 
   emcc $1 -s WASM=1 -O3 -o $DIR/$BASENAME.js
  }
-export -f foo
-find . -name "*.c" -exec bash -c 'foo "$@"' bash {} +
+export -f compile
+find . -name "*.c" -exec bash -c 'compile "$@"' bash {} +

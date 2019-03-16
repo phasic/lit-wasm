@@ -17,7 +17,7 @@ export const LitWasmMixin = base => class extends base {
         this.__wasmTemplate = 'lala ${this.value} blabla'
         const moduleName = __convertToKebabCase(this.constructor.name);
         console.log('moduleName :', moduleName);
-        this.__loadWasmModule(moduleName);
+        // this.__loadWasmModule(moduleName);
 
     }
     connectedCallback() {
@@ -34,7 +34,7 @@ export const LitWasmMixin = base => class extends base {
     }
 
     __loadWasmModule(moduleName) {
-        import('./wasm/compiled/dice-roll.js');
+        import(`../${moduleName}/wasm/${moduleName}.js`);
 
     }
 }

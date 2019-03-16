@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { LitWasmMixin } from '../../lit-wasm-mixin.js';
+import { LitWasmMixin } from '../mixins/lit-wasm-mixin.js';
 
 class CustomComponent extends LitWasmMixin(LitElement) {
   static get properties() {
@@ -13,6 +13,7 @@ class CustomComponent extends LitWasmMixin(LitElement) {
   constructor() {
     super();
     this.value = 5;
+    this.bla();
   }
 
   render() {
@@ -20,6 +21,12 @@ class CustomComponent extends LitWasmMixin(LitElement) {
     return html`
   A${this.value}B
   `;
+  }
+
+  bla(){
+    const moduleName = 'custom-component';
+    import(`./wasm/${moduleName}.js`);
+
   }
 }
 
