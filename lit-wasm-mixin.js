@@ -1,5 +1,7 @@
 import { LitElement, html } from 'lit-element';
 
+const __convertToKebabCase = string => string.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+
 export const LitWasmMixin = base => class extends base {
     static get properties() {
         return {
@@ -13,10 +15,13 @@ export const LitWasmMixin = base => class extends base {
     constructor() {
         super();
         this.__wasmTemplate = 'lala ${this.value} blabla'
+        const moduleName = __convertToKebabCase(this.constructor.name);
+        console.log('moduleName :', moduleName);
+        this.__loadWasmModule(moduleName);
+
     }
     connectedCallback() {
         super.connectedCallback();
-        // this.render();
     }
 
     _renderWasmTemplate() {
@@ -28,7 +33,8 @@ export const LitWasmMixin = base => class extends base {
 
     }
 
-    bla() {
-        console.log(' LALALAAL');
+    __loadWasmModule(moduleName) {
+        import('./wasm/compiled/dice-roll.js');
+
     }
 }

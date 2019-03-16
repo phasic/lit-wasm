@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit-element';
-import { LitWasmMixin } from './lit-wasm-mixin.js';
+import { LitWasmMixin } from '../../lit-wasm-mixin.js';
 
 class CustomComponent extends LitWasmMixin(LitElement) {
   static get properties() {
