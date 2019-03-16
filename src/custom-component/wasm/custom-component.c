@@ -11,3 +11,7 @@ int EMSCRIPTEN_KEEPALIVE roll_dice() {
     srand ( time(NULL) );
     return rand() % 6 + 1;
 }
+
+char * EMSCRIPTEN_KEEPALIVE wasm_template() {
+    return "this is a test string";
+}

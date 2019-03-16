@@ -20,3 +20,9 @@ source ./emsdk_env.sh
 --
 
 scan src folder for .c files --> get path --> compile
+
+
+
+###ISSUES###
+
+race condition on page load.
