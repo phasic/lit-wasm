@@ -2,3 +2,4 @@ node_modules
 wasm/compiled
 **/*/wasm/*.js
 **/*/wasm/*.wasm
+*.wasm

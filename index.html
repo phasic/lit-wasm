@@ -1,13 +1,21 @@
 <!doctype html>
 <html>
-
+<base href="./">
 <head>
   <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
   <script src="./node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-  <script type="module" src="./src/custom-component/custom-component.js"></script>
+  <script type="module" src="./src/custom-component/custom-component-lit.js"></script>
+
+  <wasm-loader style="display: none">
+    custom-component
+  </wasm-loader>
+  <script src="./scripts/wasm-loader.js"></script>
+
+
 </head>
 
 <body>
+
   Hi, <custom-component></custom-component>!
 
 </html>
