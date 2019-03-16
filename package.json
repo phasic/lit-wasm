@@ -1,0 +1,21 @@
+{
+  "name": "lit-wasm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "polymer serve",
+    "compile": "sh ./wasm/scripts/compile.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.7",
+    "babel-eslint": "^10.0.1",
+    "lit-element": "^2.0.1",
+    "lit-html": "^1.0.0"
+  },
+  "devDependencies": {
+    "onchange": "^5.2.0"
+  }
+}
